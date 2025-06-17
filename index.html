@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إبلاغ عن حادث - Sopremac</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>شركة Sopremac</h1>
+        <h2>نموذج إبلاغ عن حادث</h2>
+        <form action="mailto:safety@company.com" method="POST" enctype="text/plain">
+            <input type="hidden" name="company" value="Sopremac">
+
+            <label for="name">الاسم (اختياري):</label>
+            <input type="text" id="name" name="name">
+
+            <label for="location">موقع الحادث:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="type">نوع الحادث:</label>
+            <select id="type" name="type" required>
+                <option value="">-- اختر نوع الحادث --</option>
+                <option value="إصابة">إصابة</option>
+                <option value="تسرب">تسرب</option>
+                <option value="حريق">حريق</option>
+                <option value="خطر محتمل">خطر محتمل</option>
+            </select>
+
+            <label for="description">وصف الحادث:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="photo">صورة (اختياري):</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+
+            <button type="submit">إرسال البلاغ</button>
+        </form>
+    </div>
+</body>
+</html>
